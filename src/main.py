@@ -27,7 +27,7 @@ async def main() -> None:
     async with Actor:
         # Structure of input is defined in input_schema.json
         actor_input = await Actor.get_input() or {}
-        url = "https://www.linkedin.com/jobs/view/3804412397/"
+        url = actor_input.get('url')
 
         # Create an asynchronous HTTPX client
         async with AsyncClient() as client:
